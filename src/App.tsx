@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Routes, Route } from "react-router";
+import {  Routes, Route } from "react-router";
 import SignIn from "./pages/AuthPages/SignIn";
 import SignUp from "./pages/AuthPages/SignUp";
 import NotFound from "./pages/OtherPage/NotFound";
@@ -16,13 +16,15 @@ import BasicTables from "./pages/Tables/BasicTables";
 import FormElements from "./pages/Forms/FormElements";
 import Blank from "./pages/Blank";
 import AppLayout from "./layout/AppLayout";
-import { ScrollToTop } from "./components/common/ScrollToTop";
+// import { ScrollToTop } from "./components/common/ScrollToTop";
 import Home from "./pages/Dashboard/Home";
-
+import { Toaster } from "react-hot-toast";
+import ForbiddenPage from "./pages/OtherPage/ForbiddenPage";
 export default function App() {
   return (
     <>
-      <Router>
+      
+      <Toaster position="top-right" reverseOrder={false} />
         {/*<ScrollToTop />*/}
         <Routes>
           {/* Dashboard Layout */}
@@ -59,8 +61,9 @@ export default function App() {
 
           {/* Fallback Route */}
           <Route path="*" element={<NotFound />} />
+          <Route path="403" element={<ForbiddenPage />} />
         </Routes>
-      </Router>
+      
     </>
   );
 }

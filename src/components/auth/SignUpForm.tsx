@@ -1,13 +1,48 @@
-import { useState } from "react";
-import { Link } from "react-router";
+import { useState} from "react";
+import { Link } from "react-router-dom";
 import { ChevronLeftIcon, EyeCloseIcon, EyeIcon } from "../../icons";
 import Label from "../form/Label";
 import Input from "../form/input/InputField";
 import Checkbox from "../form/input/Checkbox";
+// import toast from "react-hot-toast";
+// import axios from "axios";
 
+// interface FormData {
+//   firstName: string;
+//   lastName: string;
+//   email: string;
+//   password: string;
+// }
 export default function SignUpForm() {
-  const [showPassword, setShowPassword] = useState(false);
-  const [isChecked, setIsChecked] = useState(false);
+  const [showPassword, setShowPassword] = useState<boolean>(false);
+  const [isChecked, setIsChecked] = useState<boolean>(false);
+  // const [formData, setFormData] = useState<FormData>({
+  //   firstName: "",
+  //   lastName: "",
+  //   email: "",
+  //   password: "",
+  // });
+
+  // const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
+  //   const { name, value } = e.target;
+  //   setFormData((prevData) => ({
+  //     ...prevData,
+  //     [name]: value,
+  //   }));
+  // };
+
+  // const handleSubmit = async (e: FormEvent) => {
+  //   e.preventDefault();
+
+  //   try {
+  //     const response = await axios.post("http://yourserver.com/api/signup", formData);
+  //     toast.success("ثبت‌نام موفقیت‌آمیز بود!");
+  //     // انتقال به صفحه ورود یا هر صفحه دیگر پس از ثبت‌نام موفق
+  //   } catch (error) {
+  //     toast.error("خطا در ثبت‌نام!");
+  //   }
+  // };
+
   return (
     <div className="flex flex-col flex-1 w-full overflow-y-auto lg:w-1/2 no-scrollbar">
       <div className="w-full max-w-md mx-auto mb-5 sm:pt-10">
